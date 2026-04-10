@@ -1,0 +1,2636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fegurd Spa S.A.S. — Belleza & Bienestar en Medellín</title>
+<meta name="description" content="Centro de estética y bienestar integral en Calasanz, Medellín. Masajes terapéuticos, depilación, barbería, peluquería, tratamientos faciales y spa de uñas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #6B2D8B;
+    --purple-light: #F3E8F9;
+    --purple-mid: #8B3DAB;
+    --gold: #D4A843;
+    --gold-light: #F0D080;
+    --white: #FFFFFF;
+    --dark: #2D2D2D;
+    --gray: #F5F5F5;
+    --text-muted: #777;
+    --shadow: 0 4px 20px rgba(107,45,139,0.12);
+    --shadow-hover: 0 8px 30px rgba(107,45,139,0.22);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+  a { text-decoration: none; color: inherit; }
+
+  img { max-width: 100%; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--purple), var(--purple-mid));
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(107,45,139,0.4);
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--dark);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212,168,67,0.4);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--purple);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid var(--purple);
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background: var(--purple);
+    color: var(--white);
+  }
+
+  .section-tag {
+    display: inline-block;
+    background: var(--purple-light);
+    color: var(--purple);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    color: var(--dark);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .section-title span { color: var(--purple); }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--gold));
+    border-radius: 2px;
+    margin: 16px 0 24px;
+  }
+
+  /* ===================== NAVBAR ===================== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    transition: var(--transition);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--purple), var(--gold));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .logo-text { line-height: 1.1; }
+  .logo-text strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--purple);
+  }
+  .logo-text span {
+    font-size: 0.72rem;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--dark);
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: var(--transition);
+  }
+
+  .nav-links a:hover { color: var(--purple); background: var(--purple-light); }
+
+  .nav-links .nav-cta {
+    background: linear-gradient(135deg, var(--purple), var(--purple-mid));
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 50px !important;
+  }
+
+  .nav-links .nav-cta:hover {
+    box-shadow: 0 4px 15px rgba(107,45,139,0.4);
+    background: var(--purple-light) !important;
+    color: var(--purple) !important;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: var(--purple);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-size: 1.4rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+    transition: var(--transition);
+  }
+
+  .mobile-menu a:hover { color: var(--purple); }
+
+  .mobile-menu-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--purple);
+  }
+
+  /* ===================== HERO ===================== */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a0a24 0%, #2d1045 40%, #4a1870 70%, #6B2D8B 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(212,168,67,0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(212,168,67,0.06) 0%, transparent 40%),
+                      radial-gradient(circle at 60% 80%, rgba(107,45,139,0.3) 0%, transparent 50%);
+  }
+
+  .hero-circles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .hero-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(212,168,67,0.15);
+  }
+
+  .hero-circle:nth-child(1) { width: 500px; height: 500px; top: -100px; right: -100px; }
+  .hero-circle:nth-child(2) { width: 300px; height: 300px; bottom: 50px; left: -80px; border-color: rgba(212,168,67,0.1); }
+  .hero-circle:nth-child(3) { width: 200px; height: 200px; top: 50%; right: 20%; border-color: rgba(255,255,255,0.05); }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212,168,67,0.15);
+    border: 1px solid rgba(212,168,67,0.3);
+    color: var(--gold);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge::before { content: "✦"; }
+
+  .hero-title {
+    font-size: 3.2rem;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-subtitle {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .hero-stat strong {
+    display: block;
+    font-size: 1.6rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+  }
+
+  .hero-stat span {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: var(--transition);
+  }
+
+  .hero-card:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateX(4px);
+  }
+
+  .hero-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .hero-card-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .hero-card-title {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .hero-card-price {
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .hero-card-desc {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  /* ===================== SERVICES BAR ===================== */
+  #services-bar {
+    background: var(--white);
+    padding: 32px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .services-bar-inner {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .service-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: var(--gray);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--dark);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+  }
+
+  .service-pill:hover, .service-pill.active {
+    background: var(--purple-light);
+    color: var(--purple);
+    border-color: var(--purple);
+  }
+
+  .service-pill .pill-icon { font-size: 1.1rem; }
+
+  /* ===================== WHY US ===================== */
+  #why-us {
+    padding: 100px 0;
+    background: var(--gray);
+  }
+
+  .why-us-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .why-us-visual {
+    background: linear-gradient(135deg, var(--purple), #8B3DAB);
+    border-radius: 20px;
+    padding: 48px 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-us-visual::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    background: rgba(212,168,67,0.1);
+    border-radius: 50%;
+  }
+
+  .why-us-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .why-us-quote::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 0;
+    vertical-align: -1rem;
+    margin-right: 4px;
+  }
+
+  .why-us-author { font-size: 0.85rem; opacity: 0.8; position: relative; z-index: 1; }
+  .why-us-author strong { display: block; color: var(--gold); font-size: 0.95rem; }
+
+  .why-features { display: flex; flex-direction: column; gap: 20px; }
+
+  .why-feature {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: var(--transition);
+  }
+
+  .why-feature:hover {
+    box-shadow: var(--shadow);
+    transform: translateX(4px);
+  }
+
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: var(--purple-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+
+  .why-text h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .why-text p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+
+  /* ===================== SERVICES CATALOG ===================== */
+  #services {
+    padding: 100px 0;
+    background: var(--white);
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .services-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+
+  .tab-btn {
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 2px solid #eee;
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-muted);
+  }
+
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--purple);
+    color: white;
+    border-color: var(--purple);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    transition: var(--transition);
+    border: 1px solid #f0f0f0;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .service-card-visual {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    position: relative;
+  }
+
+  .service-card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--gold);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 50px;
+  }
+
+  .service-card-body { padding: 20px; }
+
+  .service-card-cat {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .service-card-name {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .service-card-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .service-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .service-meta { display: flex; flex-direction: column; gap: 2px; }
+  .service-price { font-size: 1.1rem; font-weight: 700; color: var(--purple); }
+  .service-duration { font-size: 0.75rem; color: var(--text-muted); }
+
+  .service-reserve-btn {
+    background: var(--purple-light);
+    color: var(--purple);
+    border: none;
+    padding: 9px 18px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .service-reserve-btn:hover {
+    background: var(--purple);
+    color: white;
+  }
+
+  /* ===================== BOOKING ===================== */
+  #booking {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1a0a24, #3d1260);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #booking::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212,168,67,0.08), transparent 70%);
+    border-radius: 50%;
+  }
+
+  .booking-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .booking-info .section-tag { background: rgba(212,168,67,0.15); color: var(--gold); }
+  .booking-info .section-title { color: white; }
+  .booking-info .section-subtitle { color: rgba(255,255,255,0.65); }
+  .booking-info .divider { background: linear-gradient(90deg, var(--gold), transparent); }
+
+  .booking-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .booking-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: rgba(255,255,255,0.75);
+    font-size: 0.88rem;
+  }
+
+  .step-num {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    background: rgba(212,168,67,0.2);
+    border: 1px solid rgba(212,168,67,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .booking-form {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .booking-form h3 {
+    font-size: 1.4rem;
+    color: var(--purple);
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--purple-light);
+  }
+
+  .form-progress {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 28px;
+  }
+
+  .form-progress-step {
+    flex: 1;
+    height: 4px;
+    background: #eee;
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  .form-progress-step.active { background: var(--purple); }
+  .form-progress-step.done { background: var(--gold); }
+
+  .form-step { display: none; }
+  .form-step.active { display: block; }
+
+  .form-group { margin-bottom: 18px; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: var(--dark);
+    transition: var(--transition);
+    background: white;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--purple);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(107,45,139,0.1);
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .service-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .service-option {
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+  }
+
+  .service-option:hover, .service-option.selected {
+    border-color: var(--purple);
+    background: var(--purple-light);
+  }
+
+  .service-option .opt-icon { font-size: 1.5rem; margin-bottom: 4px; }
+  .service-option .opt-name { font-size: 0.78rem; font-weight: 600; color: var(--dark); }
+  .service-option .opt-price { font-size: 0.72rem; color: var(--purple); }
+
+  .time-slots {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .time-slot {
+    padding: 10px 6px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 500;
+    transition: var(--transition);
+    background: white;
+  }
+
+  .time-slot:hover, .time-slot.selected {
+    border-color: var(--purple);
+    background: var(--purple);
+    color: white;
+  }
+
+  .time-slot.unavailable {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #f5f5f5;
+  }
+
+  .form-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .form-nav .btn-back {
+    flex: 1;
+    padding: 13px;
+    border: 2px solid #eee;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: white;
+    color: var(--text-muted);
+    transition: var(--transition);
+  }
+
+  .form-nav .btn-back:hover { border-color: var(--purple); color: var(--purple); }
+
+  .form-nav .btn-next {
+    flex: 2;
+    padding: 13px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-mid));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .form-nav .btn-next:hover { box-shadow: 0 6px 20px rgba(107,45,139,0.4); }
+
+  .booking-success {
+    text-align: center;
+    padding: 20px;
+    display: none;
+  }
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin: 0 auto 20px;
+  }
+
+  /* ===================== TESTIMONIALS ===================== */
+  #testimonials {
+    padding: 100px 0;
+    background: var(--gray);
+  }
+
+  .testimonials-header { text-align: center; margin-bottom: 48px; }
+
+  .testimonials-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    transition: var(--transition);
+    position: relative;
+  }
+
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--purple-light);
+    line-height: 1;
+  }
+
+  .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 14px; }
+
+  .testimonial-text {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .author-info strong { display: block; font-size: 0.88rem; }
+  .author-info span { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* ===================== PROMOTIONS ===================== */
+  #promotions {
+    padding: 100px 0;
+    background: white;
+  }
+
+  .promos-header { text-align: center; margin-bottom: 48px; }
+
+  .promos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .promo-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, var(--purple), #8B3DAB);
+    padding: 32px 28px;
+    color: white;
+    transition: var(--transition);
+  }
+
+  .promo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+
+  .promo-card.gold { background: linear-gradient(135deg, #b8860b, var(--gold)); }
+  .promo-card.dark { background: linear-gradient(135deg, #1a0a24, #3d1260); }
+
+  .promo-discount {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .promo-discount .pct { font-size: 1.5rem; }
+
+  .promo-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .promo-desc { font-size: 0.82rem; opacity: 0.8; margin-bottom: 20px; line-height: 1.5; }
+
+  .promo-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+  }
+
+  .promo-cta {
+    display: inline-block;
+    background: rgba(255,255,255,0.9);
+    color: var(--purple);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .promo-cta:hover { background: white; }
+
+  .promo-card.gold .promo-cta { color: #8a6500; }
+  .promo-card.dark .promo-cta { color: var(--purple); }
+
+  .promo-deco {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* ===================== GALLERY ===================== */
+  #gallery {
+    padding: 100px 0;
+    background: var(--gray);
+  }
+
+  .gallery-header { text-align: center; margin-bottom: 48px; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 200px 200px;
+    gap: 12px;
+  }
+
+  .gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .gallery-item:nth-child(4) { grid-column: span 2; }
+
+  .gallery-visual {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    transition: var(--transition);
+  }
+
+  .gallery-item:nth-child(1) .gallery-visual { background: linear-gradient(135deg, #e8d5f0, #c9a0e0); }
+  .gallery-item:nth-child(2) .gallery-visual { background: linear-gradient(135deg, #f0e8d5, #e0c9a0); }
+  .gallery-item:nth-child(3) .gallery-visual { background: linear-gradient(135deg, #d5e8f0, #a0c9e0); }
+  .gallery-item:nth-child(4) .gallery-visual { background: linear-gradient(135deg, #f0d5e8, #e0a0c9); }
+  .gallery-item:nth-child(5) .gallery-visual { background: linear-gradient(135deg, #d5f0e8, #a0e0c9); }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(107,45,139,0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    opacity: 0;
+    transition: var(--transition);
+  }
+
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-item:hover .gallery-visual { transform: scale(1.05); }
+
+  .gallery-label { color: white; font-size: 0.85rem; font-weight: 600; }
+
+  /* ===================== CONTACT ===================== */
+  #contact {
+    padding: 100px 0;
+    background: white;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+
+  .contact-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    background: var(--gray);
+    border-radius: var(--radius);
+    transition: var(--transition);
+  }
+
+  .contact-card:hover { background: var(--purple-light); }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background: var(--purple);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .contact-text h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--purple);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-text p { font-size: 0.88rem; color: var(--dark); line-height: 1.5; }
+
+  .contact-form {
+    background: var(--gray);
+    border-radius: 20px;
+    padding: 40px;
+  }
+
+  .contact-form h3 {
+    font-size: 1.3rem;
+    color: var(--purple);
+    margin-bottom: 24px;
+  }
+
+  .map-placeholder {
+    height: 200px;
+    background: linear-gradient(135deg, var(--purple-light), #e8d0f8);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px dashed rgba(107,45,139,0.3);
+  }
+
+  .map-placeholder:hover { background: var(--purple-light); }
+  .map-placeholder .map-icon { font-size: 2.5rem; }
+  .map-placeholder p { font-size: 0.88rem; color: var(--purple); font-weight: 500; }
+  .map-placeholder span { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* ===================== FOOTER ===================== */
+  footer {
+    background: linear-gradient(135deg, #1a0a24, #2d1045);
+    color: white;
+    padding: 60px 0 24px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand .logo-icon { background: linear-gradient(135deg, var(--gold), #f0d080); }
+  .footer-brand .logo-text strong { color: var(--gold); }
+  .footer-brand .logo-text span { color: rgba(255,255,255,0.6); }
+
+  .footer-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin: 16px 0 20px;
+  }
+
+  .social-links { display: flex; gap: 10px; }
+
+  .social-link {
+    width: 38px;
+    height: 38px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+  }
+
+  .social-link:hover { background: var(--gold); }
+
+  .footer-col h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .footer-links { display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-links a {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.6);
+    transition: var(--transition);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover { color: var(--gold); padding-left: 4px; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+
+  .footer-bottom-links { display: flex; gap: 20px; }
+  .footer-bottom-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); transition: var(--transition); }
+  .footer-bottom-links a:hover { color: var(--gold); }
+
+  /* ===================== FLOATING BUTTONS ===================== */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+    z-index: 999;
+    transition: var(--transition);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .whatsapp-tooltip {
+    position: absolute;
+    right: 72px;
+    background: white;
+    color: var(--dark);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+  }
+
+  .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
+
+  /* ===================== MODAL ===================== */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 480px;
+    width: 100%;
+    position: relative;
+    animation: modalIn 0.3s ease;
+  }
+
+  @keyframes modalIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    background: var(--gray);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: var(--transition);
+  }
+
+  .modal-close:hover { background: var(--purple-light); color: var(--purple); }
+
+  /* ===================== TOAST ===================== */
+  .toast {
+    position: fixed;
+    bottom: 100px;
+    right: 28px;
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 9999;
+    transform: translateX(200%);
+    transition: transform 0.4s ease;
+    max-width: 320px;
+  }
+
+  .toast.show { transform: translateX(0); }
+  .toast-icon { font-size: 1.4rem; }
+  .toast-text strong { display: block; font-size: 0.88rem; margin-bottom: 2px; }
+  .toast-text span { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* ===================== SCROLL ANIMATIONS ===================== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+    .gallery-item:nth-child(1) { grid-column: span 2; height: 200px; }
+    .gallery-item:nth-child(4) { grid-column: span 1; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-content { grid-template-columns: 1fr; gap: 40px; padding: 40px 24px; }
+    .hero-title { font-size: 2.2rem; }
+    .hero-visual { display: none; }
+    .hero-stats { gap: 20px; }
+    .why-us-grid { grid-template-columns: 1fr; }
+    .booking-inner { grid-template-columns: 1fr; }
+    .booking-info { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .testimonials-track { grid-template-columns: 1fr; }
+    .promos-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .section-title { font-size: 1.7rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .time-slots { grid-template-columns: repeat(3, 1fr); }
+    .service-selector { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-actions { flex-direction: column; }
+    .hero-stats { flex-wrap: wrap; gap: 16px; }
+    .services-bar-inner { gap: 8px; }
+    .service-pill { padding: 10px 16px; font-size: 0.8rem; }
+    .booking-form { padding: 24px; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item:nth-child(1) { grid-column: span 1; }
+    .gallery-item:nth-child(4) { grid-column: span 1; }
+    .footer-bottom-links { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===================== HORARIOS ===================== */
+  .schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .schedule-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+  }
+  .schedule-row:last-child { border-bottom: none; }
+  .schedule-row .day { color: var(--text-muted); }
+  .schedule-row .hours { font-weight: 600; color: var(--dark); }
+  .schedule-row .hours.closed { color: #ef4444; }
+
+  /* Header section ¿Por qué elegirnos? */
+  .why-header { margin-bottom: 40px; }
+
+  .newsletter-section {
+    background: linear-gradient(135deg, var(--purple), #8B3DAB);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-text h3 { color: white; font-size: 1.4rem; margin-bottom: 6px; }
+  .newsletter-text p { color: rgba(255,255,255,0.75); font-size: 0.88rem; }
+
+  .newsletter-form { display: flex; gap: 10px; flex-wrap: wrap; }
+  .newsletter-input {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    min-width: 260px;
+    outline: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="logo-icon">✦</div>
+      <div class="logo-text">
+        <strong>Fegurd Spa</strong>
+        <span>S.A.S. · Medellín</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#promotions">Promociones</a></li>
+      <li><a href="#gallery">Galería</a></li>
+      <li><a href="#contact">Contacto</a></li>
+      <li><a href="#booking" class="nav-cta">Reservar Cita</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-menu-close" onclick="toggleMobileMenu()">✕</span>
+  <a href="#hero" onclick="toggleMobileMenu()">Inicio</a>
+  <a href="#services" onclick="toggleMobileMenu()">Servicios</a>
+  <a href="#promotions" onclick="toggleMobileMenu()">Promociones</a>
+  <a href="#gallery" onclick="toggleMobileMenu()">Galería</a>
+  <a href="#contact" onclick="toggleMobileMenu()">Contacto</a>
+  <a href="#booking" onclick="toggleMobileMenu()" class="btn-primary" style="margin-top:8px;">Reservar Cita</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-circles">
+    <div class="hero-circle"></div>
+    <div class="hero-circle"></div>
+    <div class="hero-circle"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-text fade-in">
+      <div class="hero-badge">Calasanz, Medellín · Desde 2023</div>
+      <h1 class="hero-title">
+        Tu espacio de <span class="gold">belleza</span> y bienestar integral
+      </h1>
+      <p class="hero-subtitle">
+        Masajes terapéuticos, tratamientos faciales, peluquería, barbería y mucho más. Calidad profesional con precios accesibles en el corazón de Calasanz.
+      </p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn-gold">✦ Reservar mi cita</a>
+        <a href="#services" class="btn-outline" style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.3);">Ver servicios</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>500+</strong>
+          <span>Clientes satisfechos</span>
+        </div>
+        <div class="hero-stat">
+          <strong>6</strong>
+          <span>Categorías de servicio</span>
+        </div>
+        <div class="hero-stat">
+          <strong>★ 4.9</strong>
+          <span>Calificación Google</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual fade-in fade-in-delay-2">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-card-icon">💆</div>
+          <div>
+            <div class="hero-card-title">Masaje Relajante</div>
+            <div class="hero-card-price">Desde $60.000</div>
+          </div>
+        </div>
+        <p class="hero-card-desc">60 min de relajación profunda con aromaterapia y música terapéutica.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-card-icon">💅</div>
+          <div>
+            <div class="hero-card-title">Manicure + Pedicure</div>
+            <div class="hero-card-price">Desde $45.000</div>
+          </div>
+        </div>
+        <p class="hero-card-desc">Tratamiento completo de uñas con esmalte semipermanente de larga duración.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-card-icon">✨</div>
+          <div>
+            <div class="hero-card-title">Keratina Brasileña</div>
+            <div class="hero-card-price">Desde $120.000</div>
+          </div>
+        </div>
+        <p class="hero-card-desc">Alisa, hidrata y define tu cabello hasta por 6 meses con productos L'Oréal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES BAR -->
+<section id="services-bar">
+  <div class="container">
+    <div class="services-bar-inner">
+      <div class="service-pill active" onclick="filterServices('todos')"><span class="pill-icon">🌟</span> Todos</div>
+      <div class="service-pill" onclick="filterServices('masajes')"><span class="pill-icon">💆</span> Masajes</div>
+      <div class="service-pill" onclick="filterServices('depilacion')"><span class="pill-icon">✨</span> Depilación</div>
+      <div class="service-pill" onclick="filterServices('barberia')"><span class="pill-icon">✂️</span> Barbería</div>
+      <div class="service-pill" onclick="filterServices('peluqueria')"><span class="pill-icon">💇</span> Peluquería</div>
+      <div class="service-pill" onclick="filterServices('facial')"><span class="pill-icon">🌸</span> Facial</div>
+      <div class="service-pill" onclick="filterServices('unas')"><span class="pill-icon">💅</span> Spa de Uñas</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="container">
+    <div class="why-header fade-in">
+      <div class="section-tag">¿Por qué elegirnos?</div>
+      <h2 class="section-title">Calidad premium con <span>precios accesibles</span></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Desde julio de 2023, Alexandra y Mildrey han construido un espacio donde cada cliente recibe atención personalizada con productos y técnicas de clase mundial.</p>
+    </div>
+    <div class="why-us-grid">
+      <div class="why-us-visual fade-in">
+        <div class="why-us-quote">
+          Cada visita a Fegurd Spa es un momento de lujo accesible para todos.
+        </div>
+        <div class="why-us-author">
+          <strong>Alexandra María Valle</strong>
+          Fundadora y directora de Fegurd Spa S.A.S.
+        </div>
+        <div style="margin-top:28px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.2);">
+          <div style="display:flex; gap:24px;">
+            <div style="text-align:center;">
+              <div style="font-size:1.6rem; font-family:'Playfair Display',serif; color:var(--gold);">500+</div>
+              <div style="font-size:0.72rem; opacity:0.7; text-transform:uppercase; letter-spacing:0.5px;">Clientes felices</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:1.6rem; font-family:'Playfair Display',serif; color:var(--gold);">6</div>
+              <div style="font-size:0.72rem; opacity:0.7; text-transform:uppercase; letter-spacing:0.5px;">Áreas especializadas</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:1.6rem; font-family:'Playfair Display',serif; color:var(--gold);">2+</div>
+              <div style="font-size:0.72rem; opacity:0.7; text-transform:uppercase; letter-spacing:0.5px;">Años de experiencia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-features fade-in fade-in-delay-1">
+        <div class="why-feature">
+          <div class="why-icon">💰</div>
+          <div class="why-text">
+            <h4>Precios transparentes y accesibles</h4>
+            <p>Todos nuestros precios son visibles desde el primer momento. Sin sorpresas, sin costos ocultos. Calidad de spa premium al alcance de todos.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">🏆</div>
+          <div class="why-text">
+            <h4>Personal certificado y capacitado</h4>
+            <p>Nuestro equipo de terapeutas y estilistas está en constante formación para ofrecerte las últimas técnicas y tendencias.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">✨</div>
+          <div class="why-text">
+            <h4>Productos profesionales de marca</h4>
+            <p>Trabajamos con L'Oréal Professionnel, Wahl, BaByliss Pro, Reuzel y otras marcas líderes del mercado internacional.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">📍</div>
+          <div class="why-text">
+            <h4>Ubicación céntrica en Calasanz</h4>
+            <p>Calle 52B #80A-28, fácil acceso desde toda la ciudad. Ambiente tranquilo y acogedor con estacionamiento cercano.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES CATALOG -->
+<section id="services">
+  <div class="container">
+    <div class="services-header fade-in">
+      <div class="section-tag">Nuestro portafolio</div>
+      <h2 class="section-title">Servicios pensados <span>para ti</span></h2>
+      <div class="divider" style="margin:16px auto 24px;"></div>
+      <p class="section-subtitle" style="margin:0 auto; text-align:center;">Ofrecemos una experiencia completa de bienestar y belleza para damas, caballeros y toda la familia.</p>
+    </div>
+    <div class="services-tabs">
+      <button class="tab-btn active" onclick="filterServiceCards('todos', this)">Todos</button>
+      <button class="tab-btn" onclick="filterServiceCards('masajes', this)">💆 Masajes</button>
+      <button class="tab-btn" onclick="filterServiceCards('depilacion', this)">✨ Depilación</button>
+      <button class="tab-btn" onclick="filterServiceCards('barberia', this)">✂️ Barbería</button>
+      <button class="tab-btn" onclick="filterServiceCards('peluqueria', this)">💇 Peluquería</button>
+      <button class="tab-btn" onclick="filterServiceCards('facial', this)">🌸 Facial</button>
+      <button class="tab-btn" onclick="filterServiceCards('unas', this)">💅 Uñas</button>
+    </div>
+    <div class="services-grid" id="servicesGrid">
+
+      <div class="service-card fade-in" data-category="masajes">
+        <div class="service-card-visual" style="background:linear-gradient(135deg,#e8d5f0,#c9a0e0);">
+          💆
+          <div class="service-card-badge">Popular</div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-cat">Spa de Masajes</div>
+          <h3 class="service-card-name">Masaje Relajante</h3>
+          <p class="service-card-desc">Libera el estrés con técnicas suaves que alivian tensiones musculares y promueven la calma mental.</p>
+          <div class="service-card-footer">
+            <div class="service-meta">
+              <span class="service-price">$60.000</span>
+              <span class="service-duration">⏱ 60 min</span>
+            </div>
+            <button class="service-reserve-btn" onclick="openBookingModal('Masaje Relajante')">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card fade-in fade-in-delay-1" data-category="masajes">
+        <div class="service-card-visual" style="background:linear-gradient(135deg,#d5e8f0,#a0c9e0);">
+          🤲
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-cat">Spa de Masajes</div>
+          <h3 class="service-card-name">Masaje Terapéutico</h3>
+          <p class="service-card-desc">Técnica especializada para aliviar dolores musculares, contracturas y mejorar la movilidad articular.</p>
+          <div class="service-card-footer">
+            <div class="service-meta">
+              <span class="service-price">$75.000</span>
+              <span class="service-duration">⏱ 60 min</span>
+            </div>
+            <button class="service-reserve-btn" onclick="openBookingModal('Masaje Terapéutico')">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card fade-in fade-in-delay-2" data-category="facial">
+        <div class="service-card-visual" style="background:linear-gradient(135deg,#f0e8d5,#e0c9a0);">
+          🌸
+          <div class="service-card-badge">Nuevo</div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-cat">Tratamiento Facial</div>
+          <h3 class="service-card-name">Limpieza Facial Profunda</h3>
+          <p class="service-card-desc">Eliminación de impurezas, puntos negros y células muertas. Piel renovada y luminosa.</p>
+          <div class="service-card-footer">
+            <div class="service-meta">
+              <span class="service-price">$70.000</span>
+              <span class="service-duration">⏱ 75 min</span>
+            </div>
+            <button class="service-reserve-btn" onclick="openBookingModal('Limpieza Facial Profunda')">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card fade-in" data-category="unas">
+        <div class="service-card-visual" style="background:linear-gradient(135deg,#f0d5e8,#e0a0c9);">
+          💅
+          <div class="service-card-badge">Popular</div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-cat">Spa de Uñas</div>
+          <h3 class="service-card-name">Manicure + Pedicure</h3>
+          <p class="service-card-desc">Cuidado completo de manos y pies con exfoliación, hidratación y esmalte semipermanente.</p>
+          <div class="service-card-footer">
+            <div class="service-meta">
+              <span class="service-price">$55.000</span>
+              <span class="service-duration">⏱ 90 min</span>
+            </div>
+            <button class="service-reserve-btn" onclick="openBookingModal('Manicure + Pedicure')">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card fade-in fade-in-delay-1" data-category="peluqueria">
+        <div class="service-card-visual" style="background:linear-gradient(135deg,#d5f0e8,#a0e0c9);">
+          💇
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-cat">Peluquería</div>
+          <h3 class="service-card-name">Keratina Brasileña</h3>
+          <p class="service-card-desc">Tratamiento alisador y de hidratación profunda con productos L'Oréal. Resultados hasta 6 meses.</p>
+          <div class="service-card-footer">
+            <div class="service-meta">
+              <span class="service-price">$120.000</span>
+              <span class="service-duration">⏱ 120 min</span>
+            </div>
+            <button class="service-reserve-btn" onclick="openBookingModal('Keratina Brasileña')">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card fade-in fade-in-delay-2" data-category="barberia">
+        <div class="service-card-visual" style="background:linear-gradient(135deg,#e0e8f0,#c0d0e8);">
+          ✂️
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-cat">Barbería</div>
+          <h3 class="service-card-name">Corte + Diseño de Barba</h3>
+          <p class="service-card-desc">Corte fade o clásico más diseño y arreglo de barba con acabado hot towel. Estilo profesional.</p>
+          <div class="service-card-footer">
+            <div class="service-meta">
+              <span class="service-price">$45.000</span>
+              <span class="service-duration">⏱ 50 min</span>
+            </div>
+            <button class="service-reserve-btn" onclick="openBookingModal('Corte + Diseño de Barba')">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card fade-in" data-category="depilacion">
+        <div class="service-card-visual" style="background:linear-gradient(135deg,#f8e8f0,#f0c8e0);">
+          ✨
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-cat">Depilación</div>
+          <h3 class="service-card-name">Depilación Completa con Cera</h3>
+          <p class="service-card-desc">Piernas, brazos, axilas y zona bikini. Técnica de cera caliente para mayor comodidad y duración.</p>
+          <div class="service-card-footer">
+            <div class="service-meta">
+              <span class="service-price">$65.000</span>
+              <span class="service-duration">⏱ 80 min</span>
+            </div>
+            <button class="service-reserve-btn" onclick="openBookingModal('Depilación Completa con Cera')">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card fade-in fade-in-delay-1" data-category="masajes">
+        <div class="service-card-visual" style="background:linear-gradient(135deg,#e8f0d5,#c9e0a0);">
+          🫙
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-cat">Spa de Masajes</div>
+          <h3 class="service-card-name">Masaje Reductor</h3>
+          <p class="service-card-desc">Técnica de drenaje y modelado corporal para reducir medidas y mejorar la circulación.</p>
+          <div class="service-card-footer">
+            <div class="service-meta">
+              <span class="service-price">$80.000</span>
+              <span class="service-duration">⏱ 60 min</span>
+            </div>
+            <button class="service-reserve-btn" onclick="openBookingModal('Masaje Reductor')">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card fade-in fade-in-delay-2" data-category="facial">
+        <div class="service-card-visual" style="background:linear-gradient(135deg,#fcebd5,#f8d5a0);">
+          💧
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-cat">Tratamiento Facial</div>
+          <h3 class="service-card-name">Hidratación Facial</h3>
+          <p class="service-card-desc">Tratamiento intensivo de hidratación con ácido hialurónico y vitamina C para piel radiante.</p>
+          <div class="service-card-footer">
+            <div class="service-meta">
+              <span class="service-price">$65.000</span>
+              <span class="service-duration">⏱ 60 min</span>
+            </div>
+            <button class="service-reserve-btn" onclick="openBookingModal('Hidratación Facial')">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="#booking" class="btn-primary">Ver todos los servicios y reservar</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="container">
+    <div class="booking-inner">
+      <div class="booking-info fade-in">
+        <div class="section-tag">Agenda online</div>
+        <h2 class="section-title" style="color:white;">Reserva tu cita <span style="color:var(--gold);">en minutos</span></h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Sin llamadas, sin esperas. Selecciona tu servicio, elige tu horario favorito y recibe confirmación inmediata por WhatsApp.</p>
+        <div class="booking-steps">
+          <div class="booking-step"><div class="step-num">1</div> Selecciona el servicio que deseas</div>
+          <div class="booking-step"><div class="step-num">2</div> Elige la fecha y hora disponible</div>
+          <div class="booking-step"><div class="step-num">3</div> Ingresa tus datos de contacto</div>
+          <div class="booking-step"><div class="step-num">4</div> ¡Confirma y recibe tu cita por WhatsApp!</div>
+        </div>
+        <div style="margin-top:28px; padding:16px 20px; background:rgba(212,168,67,0.1); border:1px solid rgba(212,168,67,0.25); border-radius:12px;">
+          <p style="font-size:0.83rem; color:rgba(255,255,255,0.7);">🕐 <strong style="color:var(--gold);">Horario de atención:</strong> Lunes a Sábado 8:00 AM – 7:00 PM · Domingos 9:00 AM – 3:00 PM</p>
+        </div>
+      </div>
+      <div class="booking-form fade-in fade-in-delay-1">
+        <h3>📅 Reserva tu cita</h3>
+        <div class="form-progress">
+          <div class="form-progress-step active" id="prog1"></div>
+          <div class="form-progress-step" id="prog2"></div>
+          <div class="form-progress-step" id="prog3"></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="form-step active" id="step1">
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:16px;">Paso 1 de 3 — Selecciona un servicio</p>
+          <div class="service-selector">
+            <div class="service-option" onclick="selectService(this,'Masaje Relajante')">
+              <div class="opt-icon">💆</div>
+              <div class="opt-name">Masaje Relajante</div>
+              <div class="opt-price">$60.000 · 60 min</div>
+            </div>
+            <div class="service-option" onclick="selectService(this,'Masaje Terapéutico')">
+              <div class="opt-icon">🤲</div>
+              <div class="opt-name">Masaje Terapéutico</div>
+              <div class="opt-price">$75.000 · 60 min</div>
+            </div>
+            <div class="service-option" onclick="selectService(this,'Manicure + Pedicure')">
+              <div class="opt-icon">💅</div>
+              <div class="opt-name">Manicure + Pedicure</div>
+              <div class="opt-price">$55.000 · 90 min</div>
+            </div>
+            <div class="service-option" onclick="selectService(this,'Keratina Brasileña')">
+              <div class="opt-icon">💇</div>
+              <div class="opt-name">Keratina</div>
+              <div class="opt-price">$120.000 · 120 min</div>
+            </div>
+            <div class="service-option" onclick="selectService(this,'Limpieza Facial')">
+              <div class="opt-icon">🌸</div>
+              <div class="opt-name">Limpieza Facial</div>
+              <div class="opt-price">$70.000 · 75 min</div>
+            </div>
+            <div class="service-option" onclick="selectService(this,'Corte + Barba')">
+              <div class="opt-icon">✂️</div>
+              <div class="opt-name">Corte + Barba</div>
+              <div class="opt-price">$45.000 · 50 min</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>¿Con qué terapeuta prefieres? (Opcional)</label>
+            <select>
+              <option value="">Sin preferencia</option>
+              <option>Alexandra (Masajes y Facial)</option>
+              <option>Mildrey (Peluquería y Uñas)</option>
+              <option>Equipo disponible</option>
+            </select>
+          </div>
+          <div class="form-nav">
+            <button class="btn-next" onclick="nextStep(2)">Continuar →</button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="form-step" id="step2">
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:16px;">Paso 2 de 3 — Selecciona fecha y hora</p>
+          <div class="form-group">
+            <label>Fecha de la cita</label>
+            <input type="date" id="bookingDate" min="">
+          </div>
+          <div class="form-group">
+            <label>Horario disponible</label>
+            <div class="time-slots">
+              <button class="time-slot" onclick="selectTime(this)">8:00 AM</button>
+              <button class="time-slot" onclick="selectTime(this)">9:00 AM</button>
+              <button class="time-slot unavailable">10:00 AM</button>
+              <button class="time-slot" onclick="selectTime(this)">11:00 AM</button>
+              <button class="time-slot" onclick="selectTime(this)">12:00 PM</button>
+              <button class="time-slot unavailable">1:00 PM</button>
+              <button class="time-slot" onclick="selectTime(this)">2:00 PM</button>
+              <button class="time-slot" onclick="selectTime(this)">3:00 PM</button>
+              <button class="time-slot" onclick="selectTime(this)">4:00 PM</button>
+              <button class="time-slot unavailable">5:00 PM</button>
+              <button class="time-slot" onclick="selectTime(this)">6:00 PM</button>
+              <button class="time-slot" onclick="selectTime(this)">7:00 PM</button>
+            </div>
+            <p style="font-size:0.72rem; color:var(--text-muted); margin-top:6px;">⚠️ Los horarios marcados en gris no están disponibles</p>
+          </div>
+          <div class="form-nav">
+            <button class="btn-back" onclick="prevStep(1)">← Volver</button>
+            <button class="btn-next" onclick="nextStep(3)">Continuar →</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-step" id="step3">
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:16px;">Paso 3 de 3 — Tus datos</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nombre completo *</label>
+              <input type="text" placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <label>Teléfono / WhatsApp *</label>
+              <input type="tel" placeholder="300 000 0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label>Nota adicional (opcional)</label>
+            <input type="text" placeholder="Alergias, preferencias, etc.">
+          </div>
+          <div id="bookingSummary" style="background:var(--purple-light); border-radius:10px; padding:14px 16px; margin-bottom:16px; font-size:0.82rem; color:var(--purple); display:none;">
+            <strong>Resumen de tu cita:</strong>
+            <div id="summaryText" style="margin-top:6px; color:var(--dark);"></div>
+          </div>
+          <div class="form-nav">
+            <button class="btn-back" onclick="prevStep(2)">← Volver</button>
+            <button class="btn-next" onclick="confirmBooking()">✓ Confirmar cita</button>
+          </div>
+        </div>
+
+        <!-- Success -->
+        <div class="booking-success" id="bookingSuccess">
+          <div class="success-icon">✓</div>
+          <h3 style="color:var(--purple); margin-bottom:10px;">¡Cita reservada!</h3>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:20px;">Tu cita ha sido confirmada. Recibirás un mensaje de WhatsApp con todos los detalles.</p>
+          <div style="background:var(--gray); border-radius:10px; padding:16px; text-align:left; font-size:0.82rem; margin-bottom:20px;" id="confirmDetails"></div>
+          <a href="https://wa.me/573127072996" target="_blank" class="btn-primary" style="display:inline-block;">
+            💬 Abrir WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials-header fade-in">
+      <div class="section-tag">Lo que dicen nuestros clientes</div>
+      <h2 class="section-title">Historias de <span>bienestar real</span></h2>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="testimonials-track">
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"El mejor spa de Calasanz sin duda. Alexandra es increíblemente profesional y el ambiente es muy relajante. Me hice la keratina y quedé feliz con el resultado. Ya tengo cita para el mes que viene!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">C</div>
+          <div class="author-info">
+            <strong>Cristina Gómez</strong>
+            <span>⭐ Google Reviews · Masajes y Peluquería</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in fade-in-delay-1">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Llevo 6 meses siendo cliente fiel. Excelente servicio de manicure y pedicure. El personal es muy amable y los precios son muy razonables para la calidad que ofrecen. ¡100% recomendado!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div class="author-info">
+            <strong>María Fernanda López</strong>
+            <span>⭐ Google Reviews · Spa de Uñas</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in fade-in-delay-2">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Fui al masaje terapéutico por un dolor de espalda crónico y quedé impresionado. Mildrey tiene unas manos mágicas. El lugar es muy limpio y acogedor. Lo recomiendo a todos mis amigos."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">J</div>
+          <div class="author-info">
+            <strong>Jhon Ramírez</strong>
+            <span>⭐ Google Reviews · Masajes Terapéuticos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMOTIONS -->
+<section id="promotions">
+  <div class="container">
+    <div class="promos-header fade-in">
+      <div class="section-tag">Ofertas especiales</div>
+      <h2 class="section-title">Promociones <span>exclusivas</span></h2>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="promos-grid">
+      <div class="promo-card fade-in">
+        <div class="promo-deco"></div>
+        <div class="promo-badge">✦ Nuevos clientes</div>
+        <div class="promo-discount">20<span class="pct">%</span></div>
+        <div class="promo-name">Descuento bienvenida</div>
+        <p class="promo-desc">En tu primera visita a Fegurd Spa, todos los servicios tienen 20% de descuento. ¡Ven y conócenos!</p>
+        <button class="promo-cta" onclick="openBookingModal('Servicio a elegir - 20% descuento')">Reservar ahora</button>
+      </div>
+      <div class="promo-card gold fade-in fade-in-delay-1">
+        <div class="promo-deco"></div>
+        <div class="promo-badge">⭐ Paquete familiar</div>
+        <div class="promo-discount" style="color:rgba(255,255,255,0.9);">2x1</div>
+        <div class="promo-name">Plan en familia</div>
+        <p class="promo-desc">Manicure + Pedicure para dos personas al precio de una. Válido fines de semana. Reserva con 24h de anticipación.</p>
+        <button class="promo-cta" onclick="openBookingModal('Plan Familiar 2x1')">Quiero este plan</button>
+      </div>
+      <div class="promo-card dark fade-in fade-in-delay-2">
+        <div class="promo-deco"></div>
+        <div class="promo-badge">💎 Programa de fidelidad</div>
+        <div class="promo-discount" style="font-size:2rem; margin-bottom:12px;">Puntos<br>💜</div>
+        <div class="promo-name">Acumula y gana</div>
+        <p class="promo-desc">Por cada $50.000 en servicios acumulas 1 punto. Con 10 puntos obtienes un servicio gratis a elección.</p>
+        <button class="promo-cta" onclick="showToast('💜 Programa de fidelidad', 'Consulta más detalles en recepción o por WhatsApp.')">Saber más</button>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter-section fade-in">
+      <div class="newsletter-text">
+        <h3>Recibe nuestras promociones exclusivas 💌</h3>
+        <p>Suscríbete al newsletter y sé la primera en enterarte de ofertas, nuevos servicios y tips de belleza.</p>
+      </div>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico">
+        <button class="btn-gold" onclick="subscribeNewsletter()">Suscribirme</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-header fade-in">
+      <div class="section-tag">Nuestras instalaciones</div>
+      <h2 class="section-title">Un espacio <span>diseñado para ti</span></h2>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in">
+        <div class="gallery-visual">🛁</div>
+        <div class="gallery-overlay"><span class="gallery-label">Salas de masajes privadas</span></div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-1">
+        <div class="gallery-visual">💅</div>
+        <div class="gallery-overlay"><span class="gallery-label">Zona de uñas</span></div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-2">
+        <div class="gallery-visual">✂️</div>
+        <div class="gallery-overlay"><span class="gallery-label">Área de barbería</span></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-visual">💇</div>
+        <div class="gallery-overlay"><span class="gallery-label">Zona de peluquería</span></div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-1">
+        <div class="gallery-visual">🌸</div>
+        <div class="gallery-overlay"><span class="gallery-label">Tratamientos faciales</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;" class="fade-in">
+      <div class="section-tag">Estamos aquí para ti</div>
+      <h2 class="section-title">Visítanos o <span>contáctanos</span></h2>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <div class="contact-text">
+            <h4>Dirección</h4>
+            <p>Calle 52B #80A-28, Interior 201<br>Barrio Calasanz, Medellín, Antioquia</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <div class="contact-text">
+            <h4>Teléfono / WhatsApp</h4>
+            <p>+57 312 707 2996 <br><a href="https://wa.me/573127072996" target="_blank" style="color:var(--purple); font-weight:600;">Escribir por WhatsApp →</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <div class="contact-text">
+            <h4>Correo electrónico</h4>
+            <p>pagosyreservas@fegurdspa.com </p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-text">
+            <h4>Horarios de atención</h4>
+            <div class="schedule-list">
+              <div class="schedule-row"><span class="day">Lunes – Viernes</span><span class="hours">8:00 AM – 7:00 PM</span></div>
+              <div class="schedule-row"><span class="day">Sábado</span><span class="hours">8:00 AM – 7:00 PM</span></div>
+              <div class="schedule-row"><span class="day">Domingo</span><span class="hours">9:00 AM – 3:00 PM</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="map-placeholder" onclick="window.open('https://maps.app.goo.gl/rY8ePHqWXtywLA1d9')">
+          <div class="map-icon">🗺️</div>
+          <p>Ver en Google Maps</p>
+          <span>Calle 52B #80A-28, Calasanz</span>
+        </div>
+      </div>
+      <div class="contact-form fade-in fade-in-delay-1">
+        <h3>Envíanos un mensaje</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre completo</label>
+            <input type="text" placeholder="Tu nombre completo">
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="300 000 0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <input type="email" placeholder="tu@email.com">
+        </div>
+        <div class="form-group">
+          <label>Asunto</label>
+          <select>
+            <option>Información sobre servicios</option>
+            <option>Reserva de cita</option>
+            <option>Promociones y paquetes</option>
+            <option>Trabajo en Fegurd Spa</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea rows="5" placeholder="Cuéntanos en qué podemos ayudarte..." style="width:100%; padding:12px 16px; border:2px solid #eee; border-radius:10px; font-family:'Poppins',sans-serif; font-size:0.9rem; resize:vertical; transition:var(--transition);"></textarea>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+          <input type="checkbox" id="privacyCheck" style="accent-color:var(--purple);">
+          <label for="privacyCheck" style="font-size:0.78rem; color:var(--text-muted);">Acepto la <a href="#" style="color:var(--purple);">Política de Privacidad</a> y el tratamiento de mis datos personales conforme a la Ley 1581 de 2012.</label>
+        </div>
+        <button class="btn-primary" onclick="sendContact()" style="width:100%; padding:14px;">Enviar mensaje</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:16px;">
+          <div class="logo-icon">✦</div>
+          <div class="logo-text">
+            <strong>Fegurd Spa</strong>
+            <span>S.A.S. · Medellín</span>
+          </div>
+        </div>
+        <p class="footer-desc">Centro de estética y bienestar integral en Calasanz, Medellín. Calidad profesional con precios accesibles para toda la familia.</p>
+        <div class="social-links">
+          <a class="social-link" href="#" title="Facebook">📘</a>
+          <a class="social-link" href="#" title="Instagram">📸</a>
+          <a class="social-link" href="https://wa.me/573127072996" target="_blank" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <div class="footer-links">
+          <a href="#services">Spa de Masajes</a>
+          <a href="#services">Depilación con Cera</a>
+          <a href="#services">Barbería</a>
+          <a href="#services">Peluquería</a>
+          <a href="#services">Tratamientos Faciales</a>
+          <a href="#services">Spa de Uñas</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <div class="footer-links">
+          <a href="#hero">Inicio</a>
+          <a href="#why-us">Sobre Nosotros</a>
+          <a href="#promotions">Promociones</a>
+          <a href="#gallery">Galería</a>
+          <a href="#contact">Contacto</a>
+          <a href="#">Blog / Tips de Belleza</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-links">
+          <a href="#">📍 Calle 52B #80A-28, Int. 201</a>
+          <a href="#">📞 312 707 2996</a>
+          <a href="#">📧 pagosyreservas@fegurdspa.com</a>
+          <a href="#">🕐 Lun–Sáb: 8AM–7PM</a>
+          <a href="#">🕐 Dom: 9AM–3PM</a>
+        </div>
+        <div style="margin-top:16px;">
+          <a href="#booking" class="btn-gold" style="font-size:0.8rem; padding:10px 20px;">✦ Reservar cita</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Fegurd Spa S.A.S. · NIT: 901761781-7 · Medellín, Colombia. Todos los derechos reservados.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Ley 1581 de 2012</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp-float" href="https://wa.me/573127072996?text=Hola!%20Quiero%20información%20sobre%20los%20servicios%20de%20Fegurd%20Spa" target="_blank" title="Chatea con nosotros">
+  💬
+  <div class="whatsapp-tooltip">¡Escríbenos ahora!</div>
+</a>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-close" onclick="closeModalDirect()">✕</div>
+    <h3 style="color:var(--purple); margin-bottom:8px;">Reserva rápida</h3>
+    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:24px;">Servicio seleccionado: <strong id="modalService" style="color:var(--purple);"></strong></p>
+    <div class="form-group">
+      <label>Nombre completo *</label>
+      <input type="text" id="modalName" placeholder="Tu nombre">
+    </div>
+    <div class="form-group">
+      <label>WhatsApp *</label>
+      <input type="tel" id="modalPhone" placeholder="300 000 0000">
+    </div>
+    <div class="form-group">
+      <label>Fecha preferida</label>
+      <input type="date" id="modalDate">
+    </div>
+    <button class="btn-primary" style="width:100%;" onclick="submitModal()">Confirmar por WhatsApp</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-icon" id="toastIcon">✓</div>
+  <div class="toast-text">
+    <strong id="toastTitle">Mensaje</strong>
+    <span id="toastMsg">Operación completada.</span>
+  </div>
+</div>
+
+<script>
+  // ===================== HELPERS =====================
+  function showToast(title, msg, icon='✓') {
+    document.getElementById('toastTitle').textContent = title;
+    document.getElementById('toastMsg').textContent = msg;
+    document.getElementById('toastIcon').textContent = icon;
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // ===================== MOBILE MENU =====================
+  function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // ===================== SERVICES FILTER =====================
+  function filterServices(cat) {
+    document.querySelectorAll('.service-pill').forEach(p => p.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+
+  function filterServiceCards(cat, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.service-card');
+    cards.forEach(c => {
+      if (cat === 'todos' || c.dataset.category === cat) {
+        c.style.display = 'block';
+        setTimeout(() => { c.style.opacity = '1'; c.style.transform = ''; }, 10);
+      } else {
+        c.style.opacity = '0';
+        c.style.transform = 'scale(0.95)';
+        setTimeout(() => { c.style.display = 'none'; }, 200);
+      }
+    });
+  }
+
+  // ===================== BOOKING FORM =====================
+  let selectedService = '';
+  let selectedTime = '';
+  let currentStep = 1;
+
+  function selectService(el, name) {
+    document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedService = name;
+  }
+
+  function selectTime(el) {
+    document.querySelectorAll('.time-slot').forEach(t => t.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedTime = el.textContent;
+  }
+
+  function nextStep(n) {
+    if (n === 2 && !selectedService) {
+      showToast('⚠️ Selecciona un servicio', 'Por favor elige el servicio deseado.', '⚠️');
+      return;
+    }
+    if (n === 3) {
+      const dateVal = document.getElementById('bookingDate').value;
+      if (!dateVal) { showToast('⚠️ Falta la fecha', 'Por favor selecciona una fecha.', '⚠️'); return; }
+      if (!selectedTime) { showToast('⚠️ Falta el horario', 'Por favor elige un horario disponible.', '⚠️'); return; }
+      const summary = document.getElementById('bookingSummary');
+      document.getElementById('summaryText').innerHTML =
+        `🗓️ <strong>${selectedService}</strong><br>📅 ${dateVal} a las ${selectedTime}`;
+      summary.style.display = 'block';
+    }
+    document.getElementById('step' + currentStep).classList.remove('active');
+    document.getElementById('prog' + currentStep).classList.remove('active');
+    document.getElementById('prog' + currentStep).classList.add('done');
+    currentStep = n;
+    document.getElementById('step' + currentStep).classList.add('active');
+    document.getElementById('prog' + currentStep).classList.add('active');
+  }
+
+  function prevStep(n) {
+    document.getElementById('step' + currentStep).classList.remove('active');
+    document.getElementById('prog' + currentStep).classList.remove('active');
+    document.getElementById('prog' + currentStep).classList.remove('done');
+    currentStep = n;
+    document.getElementById('step' + currentStep).classList.add('active');
+    document.getElementById('prog' + currentStep).classList.add('active');
+    document.getElementById('prog' + currentStep).classList.remove('done');
+  }
+
+  async function confirmBooking() {
+    const nombre = document.querySelector('input[placeholder="Tu nombre"]').value;
+    const telefono = document.querySelector('input[placeholder="300 000 0000"]').value;
+    const email = document.querySelector('input[placeholder="tu@email.com"]').value;
+    const notas = document.querySelector('input[placeholder="Alergias, preferencias, etc."]').value;
+    const dateVal = document.getElementById('bookingDate').value;
+
+    if (!nombre || !telefono) {
+      showToast('⚠️ Datos incompletos', 'Nombre y teléfono son obligatorios.', '⚠️');
+      return;
+    }
+
+    if (!selectedService || !selectedTime || !dateVal) {
+      showToast('⚠️ Falta información', 'Por favor completa todos los campos.', '⚠️');
+      return;
+    }
+
+    try {
+      const terapeutaSelect = document.querySelector('select');
+      const terapeuta = terapeutaSelect ? terapeutaSelect.value : 'Equipo disponible';
+
+      const response = await fetch('http://localhost:5000/api/reservas', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre: nombre.trim(),
+          telefono: telefono.trim(),
+          email: email.trim(),
+          servicio: selectedService,
+          fecha: dateVal,
+          hora: selectedTime,
+          notas: notas.trim(),
+          terapeuta: terapeuta
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        document.getElementById('confirmDetails').innerHTML =
+          `<strong>✅ Servicio:</strong> ${selectedService}<br>
+           <strong>📅 Fecha:</strong> ${dateVal}<br>
+           <strong>⏰ Hora:</strong> ${selectedTime}<br>
+           <strong>👤 Nombre:</strong> ${nombre}<br>
+           <strong>📱 Teléfono:</strong> ${telefono}<br>
+           <strong>👨‍⚕️ Terapeuta:</strong> ${terapeuta}<br>
+           <strong>🔔 Estado:</strong> Confirmada en nuestro sistema${data.whatsappEnviado ? ' ✓' : ''}`;
+        
+        document.getElementById('step3').classList.remove('active');
+        document.getElementById('prog3').classList.add('done');
+        document.getElementById('bookingSuccess').style.display = 'block';
+        showToast('✅ ¡Cita reservada!', '📱 Confirmación enviada por WhatsApp.', '✅');
+
+        setTimeout(() => { location.reload(); }, 5000);
+      } else {
+        showToast('❌ Error', data.mensaje || 'No se pudo crear la reserva.', '❌');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      showToast('❌ Error de conexión', 'No se pudo conectar al servidor. ' + error.message, '❌');
+    }
+  }
+
+  // Set min date
+  document.addEventListener('DOMContentLoaded', () => {
+    const today = new Date().toISOString().split('T')[0];
+    const d = document.getElementById('bookingDate');
+    if (d) d.min = today;
+    const md = document.getElementById('modalDate');
+    if (md) { md.min = today; md.value = today; }
+  });
+
+  // ===================== MODAL =====================
+  function openBookingModal(service) {
+    document.getElementById('modalService').textContent = service;
+    document.getElementById('modalOverlay').classList.add('open');
+  }
+
+  function closeModal(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+  }
+
+  function closeModalDirect() {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+
+  function submitModal() {
+    const name = document.getElementById('modalName').value.trim();
+    const phone = document.getElementById('modalPhone').value.trim();
+    const service = document.getElementById('modalService').textContent;
+    const date = document.getElementById('modalDate').value;
+    if (!name || !phone) {
+      showToast('⚠️ Datos incompletos', 'Por favor completa nombre y teléfono.', '⚠️');
+      return;
+    }
+    const msg = encodeURIComponent(`Hola! Soy ${name} y quiero reservar: ${service} para el ${date}. Mi teléfono es ${phone}`);
+    window.open(`https://wa.me/573127072996?text=${msg}`, '_blank');
+    closeModalDirect();
+    showToast('💬 Redirigiendo a WhatsApp', 'Completa tu reserva por WhatsApp.', '💬');
+  }
+
+  // ===================== NEWSLETTER =====================
+  function subscribeNewsletter() {
+    const input = document.querySelector('.newsletter-input');
+    if (!input.value || !input.value.includes('@')) {
+      showToast('⚠️ Email inválido', 'Por favor ingresa un correo válido.', '⚠️');
+      return;
+    }
+    input.value = '';
+    showToast('💌 ¡Suscrito!', 'Recibirás nuestras promociones muy pronto.', '💌');
+  }
+
+  // ===================== CONTACT FORM =====================
+  function sendContact() {
+    if (!document.getElementById('privacyCheck').checked) {
+      showToast('⚠️ Acepta la política', 'Debes aceptar la política de privacidad.', '⚠️');
+      return;
+    }
+    showToast('✅ Mensaje enviado', 'Te responderemos en menos de 24 horas.', '✅');
+  }
+
+  // ===================== SCROLL ANIMATIONS =====================
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ===================== NAVBAR SCROLL =====================
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
+    } else {
+      nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+    }
+  });
+
+  // ===================== SERVICE CARD TRANSITIONS =====================
+  document.querySelectorAll('.service-card').forEach(c => {
+    c.style.transition = 'opacity 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease';
+  });
+</script>
+</body>
+</html>
